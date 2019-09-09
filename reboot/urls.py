@@ -18,5 +18,5 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('articles/', include('articles.urls')),
+    path('articles/', include('articles.urls')), # 무슨 파일안에 있는지, include에는 상대적인 파일의 위치
 ]

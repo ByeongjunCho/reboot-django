@@ -1,12 +1,13 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <h1>안녕!</h1>
-</body>
-</html>
+{% extends 'articles/base.html' %}
+{% block body %}
+  <h1>안녕!</h1>
+<h3>title :</h3>
+{% for article in articles %}
+  <h3>{{ article.title }}</h3>
+  <a href="/articles/{{ article.pk }}/edit/">수정</a>
+  <a href="/articles/{{ article.pk }}/detail/">상세보기</a>
+  <a href="/articles/{{ article.pk }}/delete/">삭제</a>
+{% endfor %}
+  <br>
+  <a href="/articles/new/">새로작성하기</a>
+{% endblock %}
